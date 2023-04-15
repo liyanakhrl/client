@@ -1,0 +1,25 @@
+$color_1: #888;
+$color_2: white;
+$font-family_1: "Montserrat", sans-serif;
+$background-color_1: #e6ffe6;
+$background-color_2: #f5994a;
+$background-color_3: transparent;
+$background-color_4: #e0e0e0;
+$background-color_5: #eaeaea;
+$background-color_6: #4caf50;
+$background-color_7: #3e8e41;
+$border-color_1: #bbb;
+button[type="submit"] {
+	width: 100%;
+	margin-top: 20px;
+	padding: 10px;
+	background-color: $background-color_6;
+	color: $color_2;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	&:hover {
+		background-color: $background-color_7;
+	}
+}

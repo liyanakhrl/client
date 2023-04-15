@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="box">
+    <table class="user-list">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Username</th>
+          <th>Role</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList">
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>
+            <span *ngFor="let role of user.roles">{{ role.name }}</span>
+          </td>
+          <td>{{ user.email }}</td>
+          <td>
+            <div class="action-icons">
+              <i
+                class="fa fa-eye"
+                aria-hidden="true"
+                (click)="action('view', user)"
+              ></i>
+              <i class="fa fa-pencil-square-o" (click)="action('edit', user)"></i>
+              <i
+                *ngIf="storageService.getUser().id !== user.id"
+                class="fa fa-trash"
+                aria-hidden="true"
+                (click)="action('delete', user)"
+              ></i>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box">
+    <div class="details-container" id="detail-section">
+      <form [formGroup]="profileForm" class="user-profile">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            formControlName="username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            formControlName="email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            formControlName="firstName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name: </label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            formControlName="lastName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="role"
+            >Role :
+            <strong>{{ selectedUserRole?.name.toUpperCase() }}</strong></label
+          >
+          <select
+            class="form-control"
+            id="role"
+            formControlName="role"
+            (change)="changeRole($event)"
+          >
+            <option *ngFor="let option of otherRole" [value]="option.name">
+              {{ option.name }}
+            </option>
+          </select>
+        </div>
+
+        <button type="submit" *ngIf="mode === 'edit'" (click)="updateUser()">
+          Save
+        </button>
+        <button type="submit" *ngIf="mode === 'delete'" (click)="deleteUser()">
+          Delete
+        </button>
+        <div class="success-message" *ngIf="!pendingResponse && showMessage">
+          <p>{{ message }}</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

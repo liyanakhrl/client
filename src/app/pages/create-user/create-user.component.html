@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="box">
+    <div class="details-container">
+      <div class="success-message" *ngIf="!pendingResponse && showMessage">
+        <p>{{ message }}</p>
+      </div>
+      <form [formGroup]="createUserForm" class="user-profile">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            formControlName="username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            formControlName="email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            formControlName="firstName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            formControlName="lastName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Password</label>
+          <input type="text" id="password" name="password" disabled value="123456" />
+        </div>
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select
+            class="form-control"
+            id="role"
+            formControlName="role"
+            (change)="changeRole($event)"
+          >
+            <option *ngFor="let option of roles" [value]="option">
+              {{ option }}
+            </option>
+          </select>
+        </div>
+
+        <button type="submit" (click)="createUser()">Save</button>
+      </form>
+    </div>
+  </div>
+</div>

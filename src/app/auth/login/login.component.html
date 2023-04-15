@@ -1,0 +1,42 @@
+<body>
+  <div class="container">
+    <div class="failed-message" *ngIf="isLoginFailed">
+    <h2>Login Failed!</h2>
+    <p>Please try again</p>
+  </div>
+    <div class="wrapper" *ngIf="!isLoggedIn">
+      <h1>Login</h1>
+      <form [formGroup]="loginForm">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter username"
+          formControlName="username"
+        />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter password"
+          formControlName="password"
+        />
+        <button type="submit" (click)="onSubmit()">Login</button>
+      </form>
+    </div>
+    <div *ngIf="isLoggedIn">
+    <div class="welcome-container">
+      <h1>Welcome, <span id="username">{{user.username}}</span></h1>
+      <div class="user-info">
+        <p><strong>Name:</strong> {{user.firstname}} {{user.lastname}}</p>
+        <p><strong>Email: </strong>{{user.email}}</p>
+        <p><strong>Role: </strong>{{roles}}</p>
+      </div>
+      <button class="btn" (click)="logout()">Logout</button>
+    </div>
+
+    </div>
+  </div>
+</body>

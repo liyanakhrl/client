@@ -1,0 +1,52 @@
+$color_1: #333;
+$color_2: #000;
+$color_3: #fff;
+$color_4: #ccc;
+$font-family_1: Arial,
+sans-serif;
+$background-color_1: #eee;
+$background-color_2: #f2f2f2;
+$background-color_3: #333;
+
+.container {
+  height: 80vh;
+  //margin: 0;
+  padding: 0;
+}
+
+
+
+li{
+  padding: 5px;
+  &:hover {
+    border-bottom: 1px solid white;
+    padding: 4x;
+    border-radius:1px;
+  }
+}
+
+
+footer {
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: $background-color_3;
+  color: $color_3;
+  text-align: center;
+  height: 60px;
+  padding: 1rem;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: $color_3;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color_4;
+    }
+  }
+}
