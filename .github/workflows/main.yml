@@ -9,8 +9,9 @@ on:
       - master
 
 env:
-  DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-  DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+  DOCKER_HUB_USERNAME: liyanamyc
+  DOCKER_HUB_PASSWORD: Liyana21@@
+  DOCKER_ACCESS_TOKEN: dckr_pat_q2rLEaHmEudyjUxCK8ZQPJLNPKY
 
 jobs:
   build:
