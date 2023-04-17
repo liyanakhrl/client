@@ -1,11 +1,10 @@
 # server
 etiqa technical assessment. This is angular app
-### A third-level heading
-How to run the project 
+### How to run the project 
 ```
 docker-compose up
 ```
-To stop container
+### To stop container
 ```
 docker-compose up
 ```
