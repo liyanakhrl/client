@@ -1,4 +1,4 @@
-name: Build and Publish Angular App to Docker Hub
+name: Build and Publish Angular App to Dockerhub
 
 on:
   push:
