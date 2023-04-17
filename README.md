@@ -6,7 +6,7 @@ docker-compose up
 ```
 ### To stop container
 ```
-docker-compose up
+docker-compose down
 ```
 
 # Docker image 
