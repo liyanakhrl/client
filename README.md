@@ -1,5 +1,14 @@
 # Client
-This is angular app. The client app listen to port 8081
+This is angular app developed by Liyana Khairul to demonstrate authentication and basic CRUD web application. The client app listen to port 8081. In order to receive data from server, we need to run the server project which listen to port 8081.
+
+## Features
+- Login
+- Register
+- Create new user
+- Remove user
+- Assign role
+- Update user
+
 ### How to run the project 
 ```
 docker-compose up
