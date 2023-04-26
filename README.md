@@ -1,5 +1,5 @@
 # Client
-etiqa technical assessment. This is angular app. The client app listen to port 8081
+This is angular app. The client app listen to port 8081
 ### How to run the project 
 ```
 docker-compose up
